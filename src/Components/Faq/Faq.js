@@ -28,12 +28,6 @@ let data = [
     content: `Get the Metamask Chrome or Firefox extension at Metamask.io. 
     After registration load your wallet with ETHW. Alternatively, you can use a cryptocurrency service that allows you to change your regular currency to ETH. 
     Then, click the button "MINT" on our website to go to our mint DApp or from other Marketplace. Connect your wallet and approve the transaction on Metamask. That’s it.`
-  },
-  {
-    title: "What is our mission? ", 
-    content: `Our mission is to build a community of like-minded people who are eager to create their most abundant life, we give back abundantly to the community and love to inspire more people to join the NFT space & create the life of their dreams. 
-    We are here with a long term vision because your dream life isn’t built in one day. 
-    Join us, learn from inspiring teachers and become motivated by speakers and teachers who already have created amazing results in the Nft space and their lives and love to share their wisdom and best tips with us.`
   }
 ];
 
