@@ -30,7 +30,6 @@ function Main() {
             <Header/>
             <Welcome/>
             <Carousel/>
-            <WhiteList/>
             <RoadMap/>
             <Mint/>
             <Faq/>

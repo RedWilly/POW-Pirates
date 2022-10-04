@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import {FaTwitter, FaDiscord,FaInstagramSquare} from 'react-icons/fa';
+import Icon, {Telegram} from 'react-share-icons';
 function Footer() {
     return (
         <StyledFooter>
             <div className='Social'>
-                <a href="#"><FaTwitter className='SocialLogo twt' size={25}/></a>
-                <a href="#"><FaDiscord className='SocialLogo dsc' size={25}/></a>
+                <a href="https://twitter.com/powpirates"><FaTwitter className='SocialLogo twt' size={25}/></a>
+                <a href="https://t.me/Pirates3D"><Telegram className='SocialLogo dsc' size={25}/></a>
                 <a href="#"><FaInstagramSquare className='SocialLogo ins' size={25}/></a>
             </div>
 

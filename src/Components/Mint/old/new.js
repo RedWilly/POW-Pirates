@@ -4,8 +4,8 @@ import ETH from '../../Media/Logos/Eth.png'
 import Gif from '../../Media/Minting/Mint.gif'
 import EtherScan from '../../Media/Logos/EtherScan.png'
 import OpenSea from '../../Media/Logos/OpenSea.png'
-import skull from '../../Media/Logos/skull.png'
 import {Link} from 'react-router-dom'
+import './mint.css';
 
 
 function Mint() {
@@ -20,28 +20,19 @@ function Mint() {
                <h1>Pirates Mint</h1>
                <p>2100 Pirates from the 3D dimension fell from the sky right into ETHW blockchain. Pirates is unique and programmatically generated with over 200+ possible attributes and traits like backgrounds, clothes, mouth, head (Common & rares).</p>
                </div>
-
-            
-               <div className='Info'>
-                   <div className='Item'>
-                       
-                       <div className='Price'>
-                           <h3>Pirates</h3>
-                           <img className='Symbole' src={skull}/>
-                       </div>
                        
                    </div>
 
                    <div className='Item'>
                        <h3 className='TT'>Price Sale</h3>
                        <div className='Price'>
-                           <h3>0.32</h3>
+                           <h3>0.001</h3>
                            <img className='Symbole' src={ETH}/>
                        </div>
                    </div>
                </div>
 
-           <div className='MintContainer'>
+               <div className='MintContainer'>
            <div className='Socials'>
                    <a href='' target='_blank'>
                        <img className='SocialItem' src={OpenSea}/>
@@ -57,11 +48,8 @@ function Mint() {
            </button>
            </Link>
            </div>
-           </div>
 
 
-
-       </div>
     </StyledMint>
   )
 }
@@ -73,7 +61,6 @@ const StyledMint = styled.div`
  align-items : center;
  margin : 10px;
  height : auto;
-
  .Container{
      padding : 0px 6%;
      display : flex;
@@ -87,8 +74,6 @@ const StyledMint = styled.div`
          padding : 0px;
          width : 90vw;
      }
-
-
      .Left{
          width : 300px;
          height: 400px;
@@ -116,7 +101,6 @@ const StyledMint = styled.div`
          .Top{
              align-self :flex-end;
              
-
              @media (max-width: 768px){
                 text-align : center;
                  h1{
@@ -139,11 +123,9 @@ const StyledMint = styled.div`
              -webkit-backdrop-filter: blur( 5px );
              padding : 10px;
              justify-content : space-around;
-
              @media (max-width : 768px){
              height : 30%;
              }
-
              .Item:first-child{
                   border-style: solid;
                   border-width: 1px;
@@ -152,13 +134,11 @@ const StyledMint = styled.div`
                   border-left:0;
                   border-top: 0;
              }
-
              .Item{
                  display: flex;
                  flex-direction : column-reverse;
                  align-items :center;
                  width : 50%;
-
                  .TT{
                      font-size : 0.9rem;
                      font-family: 'Nunito Sans', sans-serif;
@@ -167,8 +147,6 @@ const StyledMint = styled.div`
                  display : flex;
                  font-family: 'Regen', sans-serif;
                               
-
-
                  .Symbole{
                  width: 30px;
                  height:30px;
@@ -180,7 +158,6 @@ const StyledMint = styled.div`
                  }
              }
          }
-
          .Socials{
              display : flex;
              flex-direction : row;
@@ -191,7 +168,6 @@ const StyledMint = styled.div`
              a{
                  cursor : pointer;
              }
-
              .SocialItem {
                  width : 20px;
              }
@@ -210,7 +186,6 @@ const StyledMint = styled.div`
             opacity : 0.8;
          }
      }
-
      .MintContainer{
          height: 80px;
          background-color :red;
@@ -230,7 +205,6 @@ const StyledMint = styled.div`
          {
              width : 100%;
          }
-
          button{
             width : 280px;
             height: 40px;
@@ -248,7 +222,6 @@ const StyledMint = styled.div`
                 width : auto;
                 padding : 0px 30px;
             }
-
             &:hover{        box-shadow:
             0 0 40px rgba( 241, 4, 148, 0.65 ),
             0 0 80px rgba( 241, 4, 148, 0.3 );
@@ -260,7 +233,6 @@ const StyledMint = styled.div`
             bottom :0;
             right :0;
          }
-
          
      }
  }

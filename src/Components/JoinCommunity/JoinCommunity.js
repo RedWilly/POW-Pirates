@@ -9,8 +9,12 @@ function JoinCommunity() {
              </div>
             <Title title='Join the Community'/>
             <div className='Buttons'>
+                <a href='https://twitter.com/powpirates' target='_blank'>
                 <button className='twt'>Twitter</button>
+                </a>
+                <a href='https://t.me/Pirates3D' target='_blank'>
                 <button className='dsc'>Telegram</button>
+                </a>
             </div>
         </StyledDiv>
     )
