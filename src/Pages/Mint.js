@@ -56,7 +56,7 @@ function Mint() {
 
      
   return (
-    Pageloading && window.ethereum && currentNetwork ==='0x4' && currentAccount ?<Loader/>
+    Pageloading && window.ethereum && currentNetwork ==='0x10001' && currentAccount ?<Loader/>
     :
     <motion.div
     initial ={{opacity:0}}
@@ -105,7 +105,7 @@ function Mint() {
                          <div className='Item'>
                            <h1>Price :</h1>
                            <h1 className='Round'>
-                           0.32 ETH
+                           0.00 ETH
                            </h1>
                          </div>
                   </div>
@@ -117,8 +117,8 @@ function Mint() {
                              <FaMinus className='icon' color='white' size={25} onClick={handleClick2}/>
                     </div>
   
-                    { <button disabled={!currentAccount || currentNetwork !='0x3'? true:false}
-                     style={{cursor: !currentAccount || currentNetwork !='0x3'? 'not-allowed' :'' }}
+                    { <button disabled={!currentAccount || currentNetwork !='0x10001'? true:false}
+                     style={{cursor: !currentAccount || currentNetwork !='0x10001'? 'not-allowed' :'' }}
                      onClick={()=>{  Mint_(counter) }}>
                        {
                          loading?

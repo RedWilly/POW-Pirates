@@ -35,7 +35,7 @@ function Mint() {
                    <div className='Item'>
                        <h3 className='TT'>Price Sale</h3>
                        <div className='Price'>
-                           <h3>0.32</h3>
+                           <h3>0.00</h3>
                            <img className='Symbole' src={ETH}/>
                        </div>
                    </div>

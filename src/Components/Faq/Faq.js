@@ -24,6 +24,10 @@ let data = [
     content: `8D Cosmic Sounds journey, full moon ETHW airdrops, and everything else we have in store and planned for the future for the Pirates. Owners of each Pirates possess commercial usage rights to their NFTs. You’re free to use your artwork as you please. Simply holding onto your POWP also unlocks more benefits. `
   },
   {
+    title: "What will be the Minting Price?", 
+    content: `The minting price for POW Pirates NFT Collection will be decided by the community this will be our very first step towards DAO that we plan on creating.`
+  },
+  {
     title: "Buying NFT for the first time?", 
     content: `Get the Metamask Chrome or Firefox extension at Metamask.io. 
     After registration load your wallet with ETHW. Alternatively, you can use a cryptocurrency service that allows you to change your regular currency to ETH. 
