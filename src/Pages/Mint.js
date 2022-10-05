@@ -117,8 +117,9 @@ function Mint() {
                              <FaMinus className='icon' color='white' size={25} onClick={handleClick2}/>
                     </div>
   
-                    { <button disabled={!currentAccount || currentNetwork !='0x10001'? true:false}
-                     style={{cursor: !currentAccount || currentNetwork !='0x10001'? 'not-allowed' :'' }}
+                    { <button disabled={!currentAccount? true:false}
+                     style={{cursor: !currentAccount? 'not-allowed' :'' }}
+
                      onClick={()=>{  Mint_(counter) }}>
                        {
                          loading?

@@ -30,7 +30,7 @@ function RoadMap() {
             </li>
             <li class="event" >
             <h4 className='Launch'>$POWP Staking</h4>
-              <p>After the mint date, we will use 30% of the profits to create the $POWP token and provide liquidity for possible trading on Uniswap, and later we will launch our erc-721tokens (NFT's) staking protocol.</p>
+              <p>After the mint date, we will use 30% of the profits to create the $POWP token and provide liquidity for possible trading on Uniswap or OKX DEX ( desicion will be made by the community through DAO), and later we will launch our erc-721tokens (NFT's) staking protocol.</p>
             </li>
             <li class="event">
             <h4 className='Launch'>DAO</h4>
