@@ -54,7 +54,16 @@ function Navbar({show}) {
       duration={200}
       to='faq'>faq</Link>
      </li> 
-  
+
+      <li>
+      <Link 
+      style={{cursor:'pointer'}}
+      spy={true}
+      smooth={true}
+      offset={-120}
+      duration={200}
+      to='WhiteList'>Whitelist</Link>
+     </li>  
       </StyledMenu>
       :''
     }
@@ -117,7 +126,24 @@ function Navbar({show}) {
          offset={-90}
          duration={200}
          to='faq'>faq</Link>
+        </li> 
+ 
+         <li>
+         <Link 
+         onClick={()=>{setToggle(false)}}
+         style={{cursor:'pointer'}}
+         spy={true}
+         smooth={true}
+         offset={-120}
+         duration={200}
+         to='WhiteList'>Whitelist</Link>
         </li>  
+        <StyledConnectButton1
+            onClick={()=>{HandleConnectWallet()}}
+            >
+              {currentAccount? `Connected ...${currentAccount.slice(-4)}` : 'Connect Wallet'}
+            <FaWallet size={20} style={{marginLeft: '10px'}}/>
+    </StyledConnectButton1>
       </StyledMobileMenu>
 
 
@@ -288,7 +314,34 @@ const StyledConnectButton = styled.button`
     0 0 80px rgba( 241, 4, 148, 0.3 );
    }
    @media (max-width: 768px) {
-    display: none;
+    display:none
+    }
+`
+const StyledConnectButton1 = styled.button`
+
+   background-color : var(--MainColor);
+   padding : 0 10px;
+   z-index: 99;
+   color : white;
+   border-radius : 5px;
+   border : none;
+   height : 40px;
+   cursor : pointer;
+   font-family: 'Ubuntu';
+   font-Size : 15px;
+   transition: 0.3s ease-in-out;
+   text-transform : uppercase;
+   display : flex;
+   justify-content : center;
+   align-items : center;
+   border : 1px solid var(--MainColor);
+   &:hover{
+   border : 1px solid var(--MainColor);
+   box-shadow:
+    0 0 40px rgba( 241, 4, 148, 0.65 ),
+    0 0 80px rgba( 241, 4, 148, 0.3 );
+   }
+   @media (max-width: 768px) {
     }
 `
 
