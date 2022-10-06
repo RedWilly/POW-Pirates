@@ -53,17 +53,7 @@ function Navbar({show}) {
       offset={-90}
       duration={200}
       to='faq'>faq</Link>
-     </li> 
-
-      <li>
-      <Link 
-      style={{cursor:'pointer'}}
-      spy={true}
-      smooth={true}
-      offset={-120}
-      duration={200}
-      to='WhiteList'>Whitelist</Link>
-     </li>  
+     </li>   
       </StyledMenu>
       :''
     }
@@ -129,14 +119,6 @@ function Navbar({show}) {
         </li> 
  
          <li>
-         <Link 
-         onClick={()=>{setToggle(false)}}
-         style={{cursor:'pointer'}}
-         spy={true}
-         smooth={true}
-         offset={-120}
-         duration={200}
-         to='WhiteList'>Whitelist</Link>
         </li>  
         <StyledConnectButton1
             onClick={()=>{HandleConnectWallet()}}

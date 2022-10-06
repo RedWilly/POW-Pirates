@@ -151,11 +151,7 @@ function Mint() {
             </div>
         </div>
 
-          {
-            currentNetwork!= '0x1'?
-            <p className='Note'>⚠️ You Are Not Connected to The EthereumPOW Main Network.</p>
-            :''
-          }
+  
   </StyledMinting>
   </motion.div>
   )

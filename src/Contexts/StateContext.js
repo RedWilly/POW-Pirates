@@ -139,7 +139,7 @@ export const StateProvider= ({ children }) => {
             const Base = new ethers.Contract(contractAdress, contractABI, signer);            
             
             let Ammount = counter;
-            let cost =0.3
+            let cost =0.4
             let value=(cost*Ammount*1000000000).toString()+"000000000"
             console.log(value)
             let overrides = {
