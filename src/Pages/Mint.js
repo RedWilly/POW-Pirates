@@ -105,7 +105,7 @@ function Mint() {
                          <div className='Item'>
                            <h1>Price :</h1>
                            <h1 className='Round'>
-                           0.00 ETH
+                           0.40 ETH
                            </h1>
                          </div>
                   </div>
