@@ -98,7 +98,7 @@ function Mint() {
                          <div className='Item'>
                            <h1>Round :</h1>
                            <h1 className='Round'>
-                             1
+                             Full
                            </h1>
                          </div>
 
