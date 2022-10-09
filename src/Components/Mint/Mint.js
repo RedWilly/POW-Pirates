@@ -46,7 +46,7 @@ function Mint() {
                    <a href='' target='_blank'>
                        <img className='SocialItem' src={OpenSea}/>
                    </a>
-                   <a href='' target='_blank'>
+                   <a href='https://www.oklink.com/en/ethw/address/0x9fED227e39460614b41206CDb1cb37363393F60f' target='_blank'>
                        <img className='SocialItem' src={EtherScan}/>
                    </a>
            </div>
