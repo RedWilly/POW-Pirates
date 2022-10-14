@@ -4,6 +4,7 @@ import ETH from '../../Media/Logos/Eth.png'
 import Gif from '../../Media/Minting/Mint.gif'
 import EtherScan from '../../Media/Logos/EtherScan.png'
 import OpenSea from '../../Media/Logos/OpenSea.png'
+import Nuwton from '../../Media/Logos/nuwton.png'
 import skull from '../../Media/Logos/skull.png'
 import {Link} from 'react-router-dom'
 
@@ -44,7 +45,7 @@ function Mint() {
            <div className='MintContainer'>
            <div className='Socials'>
                    <a href='https://nuwton.io/collection/EthereumPow/0x9fed227e39460614b41206cdb1cb37363393f60f' target='_blank'>
-                       <img className='SocialItem' src={OpenSea}/>
+                       <img className='SocialItem' src={Nuwton}/>
                    </a>
                    <a href='https://www.oklink.com/en/ethw/address/0x9fED227e39460614b41206CDb1cb37363393F60f' target='_blank'>
                        <img className='SocialItem' src={EtherScan}/>
