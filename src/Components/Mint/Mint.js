@@ -43,7 +43,7 @@ function Mint() {
 
            <div className='MintContainer'>
            <div className='Socials'>
-                   <a href='' target='_blank'>
+                   <a href='https://nuwton.io/collection/EthereumPow/0x9fed227e39460614b41206cdb1cb37363393f60f' target='_blank'>
                        <img className='SocialItem' src={OpenSea}/>
                    </a>
                    <a href='https://www.oklink.com/en/ethw/address/0x9fED227e39460614b41206CDb1cb37363393F60f' target='_blank'>
