@@ -51,8 +51,13 @@ function Navbar({show}) {
       smooth={true}
       offset={-90}
       duration={200}
+<<<<<<< HEAD
       
       ><a href='#' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
+=======
+      href='#' target='_blank'
+      >$POWP</Link>
+>>>>>>> 68e2ac075b68ad318d87abe8f0221389989bda7d
      </li>  
 
      <li>
@@ -125,9 +130,15 @@ function Navbar({show}) {
          smooth={true}
          offset={-90}
          duration={200}
+<<<<<<< HEAD
          
          ><a href='#' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
         </li> 
+=======
+         href='#' target="_blank"
+      >$POWP</Link>
+        </li>   
+>>>>>>> 68e2ac075b68ad318d87abe8f0221389989bda7d
  
         <li>
          <Link 
