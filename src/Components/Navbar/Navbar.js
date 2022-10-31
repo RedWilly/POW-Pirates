@@ -43,6 +43,16 @@ function Navbar({show}) {
       offset={-90}
       duration={200}
       to='RoadMap'>RoadMap</Link>
+     </li> 
+     <li>
+      <Link 
+      style={{cursor:'pointer'}}
+      spy={true}
+      smooth={true}
+      offset={-90}
+      duration={200}
+      href='#' target='_blank'
+      >ICO</Link>
      </li>  
 
      <li>
@@ -106,6 +116,18 @@ function Navbar({show}) {
          duration={200}
          to='RoadMap'>RoadMap</Link>
         </li>  
+
+        <li>
+         <Link 
+         onClick={()=>{setToggle(false)}}
+         style={{cursor:'pointer'}}
+         spy={true}
+         smooth={true}
+         offset={-90}
+         duration={200}
+         href='#' target="_blank"
+      >ICO</Link>
+        </li>   
  
         <li>
          <Link 
