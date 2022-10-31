@@ -52,7 +52,7 @@ function Navbar({show}) {
       offset={-90}
       duration={200}
       
-      ><a href='https://www.gitbook.com/' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
+      ><a href='#' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
      </li>  
 
      <li>
@@ -126,7 +126,7 @@ function Navbar({show}) {
          offset={-90}
          duration={200}
          
-         ><a href='https://www.gitbook.com/' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
+         ><a href='#' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
         </li> 
  
         <li>
