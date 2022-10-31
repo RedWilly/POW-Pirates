@@ -51,8 +51,8 @@ function Navbar({show}) {
       smooth={true}
       offset={-90}
       duration={200}
-      href='#' target='_blank'
-      >ICO</Link>
+      
+      ><a href='https://www.gitbook.com/' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
      </li>  
 
      <li>
@@ -125,9 +125,9 @@ function Navbar({show}) {
          smooth={true}
          offset={-90}
          duration={200}
-         href='#' target="_blank"
-      >ICO</Link>
-        </li>   
+         
+         ><a href='https://www.gitbook.com/' rel='noopener noreferrer' target='_blank' >$POWP</a></Link>
+        </li> 
  
         <li>
          <Link 
