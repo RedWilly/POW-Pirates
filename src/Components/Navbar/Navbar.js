@@ -52,7 +52,7 @@ function Navbar({show}) {
       offset={-90}
       duration={200}
       href='#' target='_blank'
-      >ICO</Link>
+      >$POWP</Link>
      </li>  
 
      <li>
@@ -126,7 +126,7 @@ function Navbar({show}) {
          offset={-90}
          duration={200}
          href='#' target="_blank"
-      >ICO</Link>
+      >$POWP</Link>
         </li>   
  
         <li>
