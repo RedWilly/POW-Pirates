@@ -236,8 +236,8 @@ const CoinToss = () => {
                   <div className="tooltip">
                     <p>
                       The game is played with 2 a sided Coin.The goal of the
-                      game is to guess whether the lucky coin face will be Heads
-                      or Tails. <br /> 1) Set your bet amount <br />
+                      game is to guess whether the lucky coin face will be POW
+                      or Pirates. <br /> 1) Set your bet amount <br />
                       2) Choose Heads or Tails <br /> 3) Pres?s the "Flip Coin"
                       button to initiatiate the transaction with your wallet{" "}
                       <br /> Wait for a few second and see if you have won{" "}
