@@ -5,6 +5,8 @@ import pirates_games_contract from "../Blockchain/pirates_games";
 import Swal from "sweetalert2";
 
 import { isMobile } from "react-device-detect";
+import axios from "axios";
+import useAxios from "axios-hooks";
 
 export const BlockchainContext = createContext();
 
@@ -42,7 +44,6 @@ export const BlockchainContextProvider = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log("Game Tab Open!!!!!!!");
     checkIfWalletIsConnected();
     listenMMAccount(); // Event is registered in background
   }, []);
@@ -134,6 +135,23 @@ export const BlockchainContextProvider = (props) => {
   * -------------------------------------------
   */
 
+  const getUserMaxTokens = async () => {
+    try {
+      const piratesTokenContract = new ethers.Contract(
+        pirates_token_contract.address,
+        pirates_token_contract.abi,
+        currentSigner
+      );
+
+      const maxTokens = await piratesTokenContract.balanceOf(
+        currentSignerAddress
+      );
+      return maxTokens;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // Coin Game
   const startCoinGame = async (props) => {
     if (props.betvalue === 0) {
@@ -164,13 +182,26 @@ export const BlockchainContextProvider = (props) => {
     );
 
     try {
-      // Approve Bet Amount Tokens
-      const tx1 = await piratesTokenContract.approve(
-        pirates_games_contract.address,
-        betAmount
+      const status = await piratesGamesContract.userApprovalStatus(
+        currentSignerAddress
       );
 
-      await tx1.wait();
+      if (!status) {
+        let approve_amount =
+          "115792089237316195423570985008687907853269984665640564039457584007913129639935"; //(2^256 - 1 )
+        const tx1 = await piratesTokenContract.approve(
+          pirates_games_contract.address,
+          approve_amount
+        );
+
+        await tx1.wait();
+
+        const tx_11 = await piratesGamesContract.setApprovalStatus(
+          currentSignerAddress
+        );
+
+        await tx_11.wait();
+      }
 
       // Start Game
       const tx2 = await piratesGamesContract.startCoinGame(
@@ -192,11 +223,9 @@ export const BlockchainContextProvider = (props) => {
 
       const CoinEvent = receipt.events[eventIndex];
 
-      const _result = CoinEvent.args[0];
+      let _result = null;
+      _result = CoinEvent.args[0];
       const betId = CoinEvent.args[1];
-
-      console.log(betId);
-      console.log(betId.toString());
 
       const betIdArrayIndex = betId - 1;
       const betInfo = await piratesGamesContract.getUserBets(
@@ -216,7 +245,6 @@ export const BlockchainContextProvider = (props) => {
 
       setLoading(false);
 
-      console.log(betInfoDetail);
       return {
         // result,
         result: _result,
@@ -227,7 +255,7 @@ export const BlockchainContextProvider = (props) => {
       console.log(error);
       Swal.fire({
         icon: "error",
-        title: "Better Luck Next Time!",
+        title: "Error",
         text: error.toString(),
       });
     }
@@ -257,13 +285,26 @@ export const BlockchainContextProvider = (props) => {
     );
 
     try {
-      // Approve Bet Amount Tokens
-      const tx1 = await piratesTokenContract.approve(
-        pirates_games_contract.address,
-        betAmount
+      const status = await piratesGamesContract.userApprovalStatus(
+        currentSignerAddress
       );
 
-      await tx1.wait();
+      if (!status) {
+        let approve_amount =
+          "115792089237316195423570985008687907853269984665640564039457584007913129639935"; //(2^256 - 1 )
+        const tx1 = await piratesTokenContract.approve(
+          pirates_games_contract.address,
+          approve_amount
+        );
+
+        await tx1.wait();
+
+        const tx_11 = await piratesGamesContract.setApprovalStatus(
+          currentSignerAddress
+        );
+
+        await tx_11.wait();
+      }
 
       // Start Game
       const tx2 = await piratesGamesContract.startDiceGame(
@@ -285,7 +326,8 @@ export const BlockchainContextProvider = (props) => {
 
       const CoinEvent = receipt.events[eventIndex];
 
-      const _result = CoinEvent.args[0];
+      let _result = null;
+      _result = CoinEvent.args[0];
       const betId = CoinEvent.args[1];
 
       const betIdArrayIndex = betId - 1;
@@ -317,7 +359,7 @@ export const BlockchainContextProvider = (props) => {
       console.log(error);
       Swal.fire({
         icon: "error",
-        title: "Better Luck Next Time!",
+        title: "Error",
         text: error.toString(),
       });
     }
@@ -331,6 +373,7 @@ export const BlockchainContextProvider = (props) => {
         loading,
         startCoinGame,
         startDiceGame,
+        getUserMaxTokens,
       }}
     >
       {props.children}

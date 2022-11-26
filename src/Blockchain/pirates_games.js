@@ -1,5 +1,5 @@
 const PiratesGamesContract = {
-  address: "0xDB29585f8414d138391B80f1b39999497ee9C5b1",
+  address: "0xb2383bF10057c26C2A96B76fd9c085C0e8E0bB2F",
   abi: [
     {
       inputs: [
@@ -179,6 +179,19 @@ const PiratesGamesContract = {
     {
       inputs: [
         {
+          internalType: "address",
+          name: "_user",
+          type: "address",
+        },
+      ],
+      name: "setApprovalStatus",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
           internalType: "uint8",
           name: "_userSelectedNumber",
           type: "uint8",
@@ -213,12 +226,18 @@ const PiratesGamesContract = {
       type: "function",
     },
     {
-      inputs: [],
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_ci",
+          type: "uint256",
+        },
+      ],
       name: "tossCoin",
       outputs: [
         {
           internalType: "uint256",
-          name: "",
+          name: "k",
           type: "uint256",
         },
       ],
@@ -236,6 +255,25 @@ const PiratesGamesContract = {
       name: "transferOwnership",
       outputs: [],
       stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "userApprovalStatus",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
       type: "function",
     },
     {
@@ -290,6 +328,13 @@ const PiratesGamesContract = {
         },
       ],
       stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "withdrawContractTokens",
+      outputs: [],
+      stateMutability: "nonpayable",
       type: "function",
     },
   ],

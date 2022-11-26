@@ -31,6 +31,7 @@ import { BlockchainContext } from "../../Contexts/BlockchainContext";
 import Loader2 from "../../Components/Loader/Loader";
 import Loader from "../Loader";
 import Swal from "sweetalert2";
+import { ethers } from "ethers";
 
 const handleopen = () => {
   document.querySelector(".blackpage").classList.add("appear");
@@ -71,8 +72,19 @@ const Dice = () => {
   const [unmuted, setunmuted] = useState(true);
   const [unzoom, setunzoom] = useState(true);
 
-  const { connectWallet, currentSignerAddress, loading, startDiceGame } =
-    useContext(BlockchainContext);
+  const {
+    connectWallet,
+    currentSignerAddress,
+    loading,
+    startDiceGame,
+    getUserMaxTokens,
+  } = useContext(BlockchainContext);
+
+  const maxHandler = async () => {
+    let maxT = await getUserMaxTokens();
+    maxT = ethers.utils.formatEther(maxT.toString());
+    setbetvalue(maxT);
+  };
 
   const startDiceGameHandler = async () => {
     const res = await startDiceGame({
@@ -100,11 +112,11 @@ const Dice = () => {
         res?.betInfoDetail.betAmount * res?.betInfoDetail.betValue
       } Pirates <br/>
 
-      You Selected Value
+      Your Selected Value
       : 
       ${res?.betInfoDetail.betValue} <br/>
 
-      Outcome
+      Actual Value
       : 
       ${res?.betInfoDetail.betValue_actual}  <br/>
       
@@ -212,11 +224,10 @@ const Dice = () => {
                   <MdOutlinePrivacyTip className="tooltip_icon" size={20} />
                   <div className="tooltip">
                     <p>
-                      The game is played with 20 sided dice.The goal of the
-                      game is to guess whether the lucky number will be above
-                      your chosen number. <br /> 1) Set your bet amount and the
+                      The game is played with 5 sided dice.The goal of the
+                      game is to guess whether the lucky number will be. <br /> 1) Set your bet amount and the
                       token <br />
-                      2) Choose a number <br /> 3) Press the "Roll To Dice"
+                      2) Choose a number <br /> 3) Press the "Start Game"
                       button to initiatiate the transaction with your wallet{" "}
                       <br /> Wait for a few second and see if you have won{" "}
                     </p>
@@ -251,10 +262,6 @@ const Dice = () => {
                   )}
                 </div>
               </div>
-              <div className="leadboared_2">
-                <p style={{ marginRight: "8px" }}>Leadboared</p>
-                <RiMedalLine size={20} />
-              </div>
             </div>
             <div className="dice_middle_container">
               <div className="dice_middle_content">
@@ -266,7 +273,7 @@ const Dice = () => {
                     <input
                       type="range"
                       min="1"
-                      max="20"
+                      max="5"
                       value={value}
                       onChange={(e) => changeValue(e.target.value)}
                       onMouseLeave={handleLeave}
@@ -279,10 +286,10 @@ const Dice = () => {
                     </span>
                     <div className="ranges">
                       <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
                       <span>5</span>
-                      <span>10</span>
-                      <span>15</span>
-                      <span>20</span>
                     </div>
                   </div>
                   <div className="bet_input">
@@ -294,7 +301,9 @@ const Dice = () => {
                       value={betvalue}
                       onChange={(e) => setbetvalue(e.target.value)}
                     />
-                    <span className="max-btn">MAX</span>
+                    <span onClick={maxHandler} className="max-btn">
+                      MAX
+                    </span>
                     <div className="value_select">
                       <div
                         onClick={() => setshowoptions(!showoptions)}
@@ -369,24 +378,25 @@ const Dice = () => {
                         <span style={{ marginRight: "5px" }}>
                           99% win chance
                         </span>
-                        <span>2.5% house edge</span>
+                        <span>house edge</span>
                       </span>
 
                       <span className="tooltip_2">
-                        Target payout: ~0 POWP{" "}
+                        For the love of the game{" "}
                         <MdOutlinePrivacyTip
                           className="tip"
                           style={{ marginBottom: "-2px" }}
                           size={15}
                         />
+                        
                         <div className="tooltip">
-                          <p>Payout = bet amount + profit -house edge </p>
+                          <p>Payout = bet amount + profit</p>
                           <ul>
                             <li>Bet amount 0 POWP</li>
-                            <li>House Edge: ~0 POWP</li>
-                            <li>Gas price 5.0000 Gewi</li>
+                            <li>Gas price 1.5000 Gwei</li>
                           </ul>
                         </div>
+                      
                       </span>
                     </div>
                   </div>
@@ -417,49 +427,6 @@ const Dice = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="analysis">
-            <table>
-              <thead>
-                <tr className="table_data">
-                  <th>
-                    <span>All</span>
-                  </th>
-                  <th>
-                    {" "}
-                    <span
-                      className="fadded"
-                      style={{ color: "#8a8e9382", wordSpace: "nowrap" }}
-                    >
-                      My bets
-                    </span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Player</span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Target</span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Porfit</span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Time</span>{" "}
-                  </th>
-                </tr>
-                <tbody>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                </tbody>
-              </thead>
-            </table>
           </div>
         </div>
       </div>

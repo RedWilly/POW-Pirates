@@ -33,6 +33,7 @@ import { BlockchainContext } from "../../Contexts/BlockchainContext";
 import Loader2 from "../../Components/Loader/Loader";
 import Loader from "../Loader";
 import Swal from "sweetalert2";
+import { ethers } from "ethers";
 
 const handleopen = () => {
   document.querySelector(".blackpage").classList.add("appear");
@@ -77,8 +78,19 @@ const CoinToss = () => {
 
   console.log(gamesOpt);
 
-  const { connectWallet, currentSignerAddress, loading, startCoinGame } =
-    useContext(BlockchainContext);
+  const {
+    connectWallet,
+    currentSignerAddress,
+    loading,
+    startCoinGame,
+    getUserMaxTokens,
+  } = useContext(BlockchainContext);
+
+  const maxHandler = async () => {
+    let maxT = await getUserMaxTokens();
+    maxT = ethers.utils.formatEther(maxT.toString());
+    setbetvalue(maxT);
+  };
 
   const startCoinGameHandler = async () => {
     const res = await startCoinGame({
@@ -123,11 +135,11 @@ const CoinToss = () => {
       : 
       ${res?.betInfoDetail.betAmount * 2} Pirates <br/>
 
-      You Selected
+      Your Selected Value
       : 
       ${betValue} <br/>
 
-      Result
+      Actual Value
       : 
       ${betValue_actual}  <br/>
       
@@ -236,11 +248,11 @@ const CoinToss = () => {
                   <div className="tooltip">
                     <p>
                       The game is played with 2 a sided Coin.The goal of the
-                      game is to guess whether the lucky coin face will be POW
-                      or Pirates. <br /> 1) Set your bet amount <br />
-                      2) Choose Heads or Tails <br /> 3) Pres?s the "Flip Coin"
+                      game is to guess whether the lucky coin face will be Heads
+                      or Tails. <br /> 1) Set your bet amount <br />
+                      2) Choose POW or PIRATES <br /> 3) Presss the "Start Game"
                       button to initiatiate the transaction with your wallet{" "}
-                      <br /> Wait for a few second and see if you have won{" "}
+                      <br /> Wait for a few second and see the result{" "}
                     </p>
                   </div>
                 </div>
@@ -273,10 +285,6 @@ const CoinToss = () => {
                   )}
                 </div>
               </div>
-              <div className="leadboared_2">
-                <p style={{ marginRight: "8px" }}>Leadboared</p>
-                <RiMedalLine size={20} />
-              </div>
             </div>
             <div className="cointoss_middle_container">
               <div className="cointoss_middle_content">
@@ -307,7 +315,9 @@ const CoinToss = () => {
                       value={betvalue}
                       onChange={(e) => setbetvalue(e.target.value)}
                     />
-                    <span className="max-btn">MAX</span>
+                    <span onClick={maxHandler} className="max-btn">
+                      MAX
+                    </span>
                     <div className="value_select">
                       <div
                         onClick={() => setshowoptions(!showoptions)}
@@ -393,22 +403,21 @@ const CoinToss = () => {
                         <span style={{ marginRight: "5px" }}>
                           99% win chance
                         </span>
-                        <span>2.5% house edge</span>
+                        <span>house edge</span>
                       </span>
 
                       <span className="tooltip_2">
-                        Target payout: ~0 POWP{" "}
+                      For the love of the game{" "}
                         <MdOutlinePrivacyTip
                           className="tip"
                           style={{ marginBottom: "-2px" }}
                           size={15}
                         />
                         <div className="tooltip">
-                          <p>Payout = bet amount + profit -house edge </p>
+                          <p>Payout = bet amount + profit</p>
                           <ul>
                             <li>Bet amount 0 POWP</li>
-                            <li>House Edge: ~0 POWP</li>
-                            <li>Gas price 5.0000 Gewi</li>
+                            <li>Gas price 1.5000 Gwei</li>
                           </ul>
                         </div>
                       </span>
@@ -441,49 +450,6 @@ const CoinToss = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="analysis">
-            <table>
-              <thead>
-                <tr className="table_data">
-                  <th>
-                    <span>All</span>
-                  </th>
-                  <th>
-                    {" "}
-                    <span
-                      className="fadded"
-                      style={{ color: "#8a8e9382", wordSpace: "nowrap" }}
-                    >
-                      My bets
-                    </span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Player</span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Target</span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Porfit</span>{" "}
-                  </th>
-                  <th>
-                    {" "}
-                    <span>Time</span>{" "}
-                  </th>
-                </tr>
-                <tbody>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                </tbody>
-              </thead>
-            </table>
           </div>
         </div>
       </div>

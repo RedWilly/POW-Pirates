@@ -11,6 +11,8 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
+    "axios": "^1.2.0",
+    "axios-hooks": "^4.0.0",
     "bootstrap": "^5.2.2",
     "buffer": "^6.0.3",
     "ethers": "^5.7.2",

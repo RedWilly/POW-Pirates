@@ -145,29 +145,12 @@ function Navbar({show}) {
          duration={200}
          to='faq'>faq</Link>
         </li> 
-
         <li>
          <a
                   style={{cursor:'pointer'}}
                   //spy={true}
                   //smooth={true}
                   href='/Games/Dice'>Games</a>
-        </li> 
-
-        <li>
-         <a
-                  style={{cursor:'pointer'}}
-                  //spy={true}
-                  //smooth={true}
-                  href='/Farms'>Farms</a>
-        </li> 
-
-        <li>
-         <a target={'_blank'}
-                  style={{cursor:'pointer'}}
-                  //spy={true}
-                  //smooth={true}
-                  href='https://stake.powpirates.com/'>Staking</a>
         </li> 
  
          <li>
