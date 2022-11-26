@@ -151,7 +151,7 @@ function Navbar({show}) {
                   style={{cursor:'pointer'}}
                   //spy={true}
                   //smooth={true}
-                  href='/Farms'>Farms</a>
+                  href='/Games/Dice'>Games</a>
         </li> 
 
         <li>
@@ -159,7 +159,15 @@ function Navbar({show}) {
                   style={{cursor:'pointer'}}
                   //spy={true}
                   //smooth={true}
-                  href='/Games/Dice'>Games</a>
+                  href='/Farms'>Farms</a>
+        </li> 
+
+        <li>
+         <a target={'_blank'}
+                  style={{cursor:'pointer'}}
+                  //spy={true}
+                  //smooth={true}
+                  href='https://stake.powpirates.com/'>Staking</a>
         </li> 
  
          <li>
