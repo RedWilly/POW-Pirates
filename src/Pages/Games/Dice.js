@@ -212,7 +212,7 @@ const Dice = () => {
                   <MdOutlinePrivacyTip className="tooltip_icon" size={20} />
                   <div className="tooltip">
                     <p>
-                      The game is played with 100 sided dice.The goal of the
+                      The game is played with 20 sided dice.The goal of the
                       game is to guess whether the lucky number will be above
                       your chosen number. <br /> 1) Set your bet amount and the
                       token <br />
