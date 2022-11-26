@@ -152,6 +152,17 @@ function Navbar({show}) {
                   //smooth={true}
                   href='/Games/Dice'>Games</a>
         </li> 
+
+        <li>
+         <Link 
+         onClick={()=>{setToggle(false)}}
+         style={{cursor:'pointer'}}
+         spy={true}
+         smooth={true}
+         offset={-90}
+         duration={200}
+         to='/Farms'>Farms</Link>
+        </li> 
  
          <li>
         </li>  
