@@ -43,16 +43,6 @@ function Navbar({show}) {
       offset={-90}
       duration={200}
       to='RoadMap'>RoadMap</Link>
-     </li> 
-     <li>
-      <Link 
-      style={{cursor:'pointer'}}
-      spy={true}
-      smooth={true}
-      offset={-90}
-      duration={200}
-      
-      ><a href='https://ico.powpirates.com/'>$POWP</a></Link>
      </li>  
 
      <li>
@@ -63,7 +53,35 @@ function Navbar({show}) {
       offset={-90}
       duration={200}
       to='faq'>faq</Link>
-     </li>   
+     </li>
+          <li>
+              <a
+                  style={{cursor:'pointer'}}
+                  //spy={true}
+                  //smooth={true}
+                  href='/Games/Dice'>Games</a>
+          </li>
+          <li>
+              <a
+                  style={{cursor:'pointer'}}
+                  //spy={true}
+                  //smooth={true}
+                  href='/Farms'>Farms</a>
+          </li>
+          <li>
+              <a target={'_blank'}
+                 style={{cursor:'pointer'}}
+                  //spy={true}
+                  //smooth={true}
+                 href='https://stake.powpirates.com/'>Staking</a>
+          </li>
+          <li>
+              <a target={'_blank'}
+                 style={{cursor:'pointer'}}
+                  //spy={true}
+                  //smooth={true}
+                 href='https://app.uniwswap.com/#/swap?outputCurrency=0xb82d7cd6710da0f2f5035c03ac596e2a9da211f7'>$POWP</a>
+          </li>
       </StyledMenu>
       :''
     }
@@ -116,17 +134,6 @@ function Navbar({show}) {
          duration={200}
          to='RoadMap'>RoadMap</Link>
         </li>  
-
-        <li>
-         <Link 
-         onClick={()=>{setToggle(false)}}
-         style={{cursor:'pointer'}}
-         spy={true}
-         smooth={true}
-         offset={-90}
-         duration={200}
-         ><a href='https://ico.powpirates.com/'>$POWP</a></Link>
-        </li>  
  
         <li>
          <Link 
@@ -137,6 +144,13 @@ function Navbar({show}) {
          offset={-90}
          duration={200}
          to='faq'>faq</Link>
+        </li> 
+        <li>
+         <a
+                  style={{cursor:'pointer'}}
+                  //spy={true}
+                  //smooth={true}
+                  href='/Games/Dice'>Games</a>
         </li> 
  
          <li>

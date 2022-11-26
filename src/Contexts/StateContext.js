@@ -26,6 +26,8 @@ export const StateProvider= ({ children }) => {
      const [currentAccount, setCurrentAccount]= useState();
      const [currentNetwork, setCurrentNetwork]= useState();
      const [currentAccountBalance, setCurrentAccountBalance] = useState();
+ const [gamesOpt, setgamesOpt] = useState(0)
+
      const [ContractInfo, setContractInfo] = useState(
        {
            PriceSale    : '-',
@@ -314,7 +316,10 @@ export const StateProvider= ({ children }) => {
             currentAccountBalance,
             currentNetwork,
             loading,
-            Pageloading
+            Pageloading,
+            gamesOpt,
+            setgamesOpt
+
         }}
         >
             {children}

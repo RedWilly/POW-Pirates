@@ -56,7 +56,7 @@ function Mint() {
 
      
   return (
-    Pageloading && window.ethereum && currentNetwork ==='0x10001' && currentAccount ?<Loader/>
+    Pageloading && window.ethereum && currentNetwork ==='0x10001' && currentAccount ? <Loader/>
     :
     <motion.div
     initial ={{opacity:0}}
@@ -158,7 +158,7 @@ function Mint() {
 }
 
 
-const StyledMinting = styled.div`
+export const StyledMinting = styled.div`
   height: 100vh;
   background: radial-gradient(circle, rgba(49,13,78,1) 0%, rgba(17,7,42,1) 100%);
   overflow : hidden;

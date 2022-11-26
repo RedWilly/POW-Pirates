@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
 
 @font-face {
   font-family: "Circular Std Book";
@@ -28,7 +27,6 @@
   font-display: swap;
 }
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,38 +34,39 @@
   scroll-behavior: smooth;
 }
 :root {
-  --MainColor :#fe009c;;
+  --MainColor: #fe009c;
   --black-color: #1f1c1c;
-  --ParagraphColor  :#7e7e7e;
-  --Bg : #271445;
+  --ParagraphColor: #7e7e7e;
+  --Bg: #271445;
+  --text-color: #fff;
 
-    /*FontsVars*/
-    --font-primary :"Circular Std Book", sans-serif;
-    --font-secondary: "Mark Pro", sans-serif;
-    --font-tertiary: "D-DIN Condensed", sans-serif;
+  /*FontsVars*/
+  --font-primary: "Circular Std Book", sans-serif;
+  --font-secondary: "Mark Pro", sans-serif;
+  --font-tertiary: "D-DIN Condensed", sans-serif;
 }
-body{
- /*background-color: #f5f5f5;*/ 
- background-color: var(--Bg);
+body {
+  /*background-color: #f5f5f5;*/
+  background-color: var(--Bg);
 }
 
-  /* width */
-  ::-webkit-scrollbar {
-    width: 7px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-      background-color: var(--Bg);
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #48257f; 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #3b1e68; 
-  }
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--Bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #48257f;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3b1e68;
+}

@@ -1,0 +1,40 @@
+.farmContainer {
+    color: var(--text-color);
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 12px;
+    font-family: var(--font-secondary);
+}
+
+
+.farmCard {
+    border: 1px solid rgba( 255,255,255,0.18 );
+    border-radius: 10px;
+    padding: 12px;
+    background-color: rgba(47,26,81,0.52);
+    overflow: hidden;
+    width: 352px;
+    backdrop-filter: blur( 5px );
+}
+
+
+
+.farmTitle {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .farmCard {
+        padding: 8px;
+    }
+}
