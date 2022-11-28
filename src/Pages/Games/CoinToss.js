@@ -216,7 +216,8 @@ const CoinToss = () => {
                 color="white"
                 size={30}
               />
-              <p className="buy_pirate ">buy $Pow Pirates </p>
+              <a href="https://app.uniwswap.com/#/swap?outputCurrency=0xb82d7cd6710da0f2f5035c03ac596e2a9da211f7" target="blank">
+              <p className="buy_pirate ">buy $Pow Pirates </p></a>
             </div>
             <div className="second_nav">
               <BsBellFill className="bell" color="white" size={35} />

@@ -32,45 +32,58 @@ import Loader2 from "../../Components/Loader/Loader";
 import Loader from "../Loader";
 import Swal from "sweetalert2";
 import { ethers } from "ethers";
-
+import InputRange from 'react-input-range';
+import 'react-input-range/lib/css/index.css'
 const handleopen = () => {
   document.querySelector(".blackpage").classList.add("appear");
   document.querySelector(".game_side_menu").classList.add("open");
 };
-const handleLeave = () => {
-  document.querySelector(".value_bubble").style.visibility = "hidden";
-};
+
 const handleclose = () => {
   document.querySelector(".blackpage").classList.remove("appear");
   document.querySelector(".game_side_menu").classList.remove("open");
 };
 
-const handleRange = (e, value, unmuted) => {
-  // new Audio(song1).play()
-  unmuted
-    ? document.getElementById("song1").play()
-    : document.getElementById("song1").pause();
-
-  var newValue = ((value - e.target.min) / (e.target.max - e.target.min)) * 100;
-  let width = document.querySelector(".slider").offsetWidth;
-  let way = (newValue / 100) * width;
-  console.log(way);
-  document.querySelector(".value_bubble").style.left = `calc(28.3255px + ${
-    way * 0.95
-  }px )`;
-  document.querySelector(".value_bubble").style.visibility = "visible";
-  document.querySelector(
-    ".slider"
-  ).style.background = `linear-gradient(to right ,#fe009c 0% ,#fe009c ${newValue}% , #fff ${newValue}%,  #fff 100%)`;
-};
 
 const Dice = () => {
-  const [value, changeValue] = useState(1);
+  const [value, setvalue] = useState(1);
   const [betvalue, setbetvalue] = useState(0);
   const [betoption, setbetoption] = useState("PIRATES");
   const [showoptions, setshowoptions] = useState(false);
   const [unmuted, setunmuted] = useState(true);
   const [unzoom, setunzoom] = useState(true);
+
+
+const handleRange = (value) => {
+  // new Audio(song1).play()
+  
+setvalue(value)
+unmuted
+    ? document.getElementById("song1").play()
+    : document.getElementById("song1").pause();
+  // var newValue = ((value - e.target.min) / (e.target.max - e.target.min)) * 100;
+  // let width = document.querySelector(".slider").offsetWidth;
+  // let way = (newValue / 100) * width;
+  // console.log(way);
+  // document.querySelector(".value_bubble").style.left = `calc(28.3255px + ${
+  //   way * 0.95
+  // }px )`;
+  // document.querySelector(".value_bubble").style.visibility = "visible";
+  // document.querySelector(
+  //   ".slider"
+  // ).style.background = `linear-gradient(to right ,#fe009c 0% ,#fe009c ${newValue}% , #fff ${newValue}%,  #fff 100%)`;
+};
+
+
+
+// const handlesecondevoice =(unmuted)=>{
+
+// }
+
+
+
+
+
 
   const {
     connectWallet,
@@ -194,7 +207,8 @@ const Dice = () => {
                 color="white"
                 size={30}
               />
-              <p className="buy_pirate ">buy $Pow Pirates </p>
+              <a href="https://app.uniwswap.com/#/swap?outputCurrency=0xb82d7cd6710da0f2f5035c03ac596e2a9da211f7" target="blank"><p className="buy_pirate ">buy $Pow Pirates </p> 
+              </a>
             </div>
             <div className="second_nav">
               <BsBellFill className="bell" color="white" size={35} />
@@ -233,12 +247,15 @@ const Dice = () => {
                     </p>
                   </div>
                 </div>
-                <div className="contract_container">
-                  <FaFileContract size={20} />
+                <a href="https://www.oklink.com/en/ethw/address/0xb2383bf10057c26c2a96b76fd9c085c0e8e0bb2f" target="blank" style={{marginLeft:'10px'}}>
+<div className="contract_container">
+                  <FaFileContract color="white" size={20} />
                   <div className="tooltip">
                     <p>View a contract </p>
                   </div>
                 </div>
+                </a>
+                
                 <div className="zoom-container">
                   <MdOutlineZoomOutMap
                     cursor="pointer"
@@ -269,8 +286,10 @@ const Dice = () => {
                   <div className="value_container">
                     <span id="demo">{value}x</span>
                   </div>
-                  <div className="range_parent">
-                    <input
+                  <div className="range_parent"
+                  
+                  >
+                    {/* <input
                       type="range"
                       min="1"
                       max="5"
@@ -283,7 +302,20 @@ const Dice = () => {
                     />
                     <span className="value_bubble">
                       <p>{value}</p>
-                    </span>
+                    </span> */}
+                    
+                    <InputRange
+          maxValue={5}
+          minValue={1}
+          
+          formatLabel={value => <div className="hi"><div>{value}</div></div>}
+          value={value}
+          onChange={(value) => handleRange(value)}
+          // onChangeStart={ () => handlesecondevoice()} 
+          
+          />
+         
+
                     <div className="ranges">
                       <span>1</span>
                       <span>2</span>
