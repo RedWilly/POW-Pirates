@@ -335,17 +335,17 @@ const CoinToss = () => {
                       {showoptions && (
                         <div className="options">
                           <div
-                            onClick={() => setbetoption("PIRATES")}
+                            onClick={() => setbetoption("POWP")}
                             className="option"
                           >
                             <TiTick
                               className={
-                                betoption === "PIRATES"
+                                betoption === "POWP"
                                   ? "tick_hidden show"
                                   : "tick_hidden "
                               }
                             />
-                            <span>PIRATES</span>
+                            <span>POWP</span>
                             <div>
                               <img
                                 className="currency_icon"
