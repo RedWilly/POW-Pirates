@@ -318,7 +318,7 @@ const CoinToss = () => {
                     />
                     <span onClick={maxHandler} className="max-btn">
                       MAX
-                    </span>
+                      </span>
                     <div className="value_select">
                       <div
                         onClick={() => setshowoptions(!showoptions)}
@@ -334,28 +334,6 @@ const CoinToss = () => {
                       </div>
                       {showoptions && (
                         <div className="options">
-                          {/* POW */}
-                          <div
-                            onClick={() => setbetoption("POW")}
-                            className="option"
-                          >
-                            <TiTick
-                              className={
-                                betoption === "POW"
-                                  ? "tick_hidden show"
-                                  : "tick_hidden "
-                              }
-                            />
-                            <span>POW</span>
-                            <div>
-                              <img
-                                className="currency_icon"
-                                src={powpirate}
-                                alt="currencyicon"
-                              />
-                            </div>
-                          </div>
-                          {/* Pirates */}
                           <div
                             onClick={() => setbetoption("PIRATES")}
                             className="option"
