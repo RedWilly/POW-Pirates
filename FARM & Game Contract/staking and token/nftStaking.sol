@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 import "./MintableToken.sol";
 
-contract MutantStaking is OwnableUpgradeable, ReentrancyGuardUpgradeable, PausableUpgradeable {
+contract PowPirates is OwnableUpgradeable, ReentrancyGuardUpgradeable, PausableUpgradeable {
     using EnumerableSetUpgradeable for EnumerableSetUpgradeable.UintSet;
     using SafeMathUpgradeable for uint256;
 
